@@ -15,16 +15,16 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#Elon"><h5>Elon Musk</h5></a>
+                    <a href="#Elon" class="scroll-link"><h5>Elon Musk</h5></a>
                 </li>
                 <li>
-                    <a href="#Lee"><h5>Stand Lee</h5></a>
+                    <a href="#Lee" class="scroll-link"><h5>Stand Lee</h5></a>
                 </li>
                 <li>
-                    <a href="#Hulk"><h5>Hulk</h5></a>
+                    <a href="#Hulk" class="scroll-link"><h5>Hulk</h5></a>
                 </li>
                 <li>
-                    <a href="#Ms"><h5>Ms Dhoni</h5></a>
+                    <a href="#Ms" class="scroll-link"><h5>Ms Dhoni</h5></a>
                 </li>
             </ul>
         </nav>
@@ -75,5 +75,21 @@
         <h6>Design and Developed by <span><a href="https://aravindsaravanangithub.github.io/Launching-Website./" target="_blank">Aravind S</a></span></h6>
         <p>&copy;2024 All rights reversed.</p>
     </footer>
+
+     <script>
+        // Select all the links with the class "scroll-link"
+        document.querySelectorAll('.scroll-link').forEach(link => {
+            link.addEventListener('click', function(e){
+                e.preventDefault();
+                const targetID= this.getAttribute('href');
+                const targetSection=document.querySelector(targetID);
+                targetSection.scrollIntoView({
+                    behavior:'smooth',
+                    block:'center',
+                    inline:'nearest'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
